@@ -1,4 +1,8 @@
 ## Quick start
-- git clone https://github.com/WiktorSzyc/JNiP3
-- cd JNiP3
-- sudo docker-compose up
+- git clone https://github.com/gbzaleski/JNP3-Instagram
+- cd JNP-Instagram
+- docker-compose build
+- docker-compose up
+
+## Cooperation
+Project creation in cooperation with https://github.com/wszyc
