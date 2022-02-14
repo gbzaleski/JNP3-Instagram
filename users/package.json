@@ -1,0 +1,28 @@
+{
+  "name": "posts-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^7.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-async-router": "^0.1.15",
+    "ioredis": "^4.28.5",
+    "promisify": "^0.0.3",
+    "redis": "^4.0.3",
+    "sqlite": "^4.0.23",
+    "sqlite3": "github:mapbox/node-sqlite3#593c9d",
+    "util.promisify": "^1.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

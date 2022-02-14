@@ -1,0 +1,82 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis
+    container_name: redis
+    expose:
+      - 6379
+
+  comments:
+    image: comments
+    build: ./comments
+    container_name: comments
+    ports:
+      - 9600:8080
+    depends_on:
+      - "users"
+
+  follows:
+    image: follows
+    build: ./follows
+    container_name: follows
+    ports:
+          - 9601:8080
+    depends_on:
+      - "users"
+
+  posts:
+    image: posts
+    build: ./posts
+    container_name: posts
+    ports:
+          - 9602:8080
+    depends_on:
+      - "users"
+
+  profiles:
+    image: profiles
+    build: ./profiles
+    container_name: profiles
+    ports:
+          - 9603:8080
+    depends_on:
+      - "users"
+
+  reactions:
+    image: reactions
+    build: ./reactions
+    container_name: reactions
+    ports:
+          - 9604:8080
+    depends_on:
+      - "users"
+
+  users:
+      image: users
+      build: ./users
+      container_name: users
+      ports:
+            - 9605:8080
+      depends_on:
+        - redis
+
+  front1:
+      image: front
+      build: ./front/instagram
+      container_name: front1
+
+  front2:
+      image: front
+      build: ./front/instagram
+      container_name: front2
+
+  varnish-front:
+    image: varnish:7.0
+    volumes:
+      - ./varnish:/etc/varnish:ro
+    ports:
+      - 3000:80
+    depends_on:
+      - front1
+      - front2
