@@ -5,4 +5,4 @@
 - docker-compose up
 
 ## Cooperation
-Project created in cooperation with https://github.com/wszyc
+Project created in cooperation with https://github.com/WiktorSzyc
